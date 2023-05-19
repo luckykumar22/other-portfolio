@@ -35,6 +35,12 @@ header {
   align-items: center;
   z-index: 100;
   background: transparent;
+  transition: .5s;
+}
+
+.header.sticky{
+    background: var(--bg-color);
+    box-shadow: 0 .1rem 1rem var(--shadow-color);
 }
 
 .logo {
@@ -52,6 +58,13 @@ header {
   margin-right: 3.5rem;
   color: var(--white-color);
 }
+.header.sticky .navbar a {
+    color: var(--text-color);
+}
+.header.sticky .navbar a.active{
+    color: var(--main-color);
+}
+
 .navbar a.active::before {
   content: "";
   left: 0;
@@ -62,10 +75,20 @@ header {
   background: var(--white-color);
 }
 
+.header.sticky .navbar a::before{
+    background: var(--white-color);
+    opacity: .7;
+}
+
 #darkMode-icon {
   color: var(--white-color);
   font-size: 2.4rem;
   cursor: pointer;
+}
+
+.header.sticky #darkMode-icon {
+    color: var(--text-color);
+    opacity: .9;
 }
 section {
   min-height: 100vh;
@@ -111,6 +134,7 @@ section {
 }
 .home-content p {
   font-size: 2rem;
+  font-weight: 500;
 }
 
 .btn {
@@ -208,4 +232,32 @@ section {
   position: absolute;
   width: 100%;
   pointer-events: none;
+}
+
+span{
+    color: var(--main-color);
+}
+.about{
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+.about-img img{
+    width: 30vw;
+}
+.heading{
+    font-size: 4.5rem;
+    text-align: center;
+}
+.about-content h2{
+    text-align: left;
+    line-height: 1.2;
+}
+.about-content h3{
+    font-size: 2rem;
+}
+.about-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
 }
